@@ -1,0 +1,14 @@
+## Interface: 38000
+## Title: ChatWarden
+## Notes: ChatWarden - Protect your chat environment from spam and harassment
+## Notes-zhCN: 聊天守卫 - 保护你的聊天环境免受垃圾信息骚扰
+## Author: Oishi
+## Version: 1.0.0
+## X-Category: Chat
+## X-License: MIT
+## X-Credits: Ace3 Development Team
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: ChatWardenDB
+## OptionalDeps: 
+
