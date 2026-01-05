@@ -1,0 +1,154 @@
+# ============================================
+# WoW 插件开发特定文件
+# ============================================
+
+# WoW 插件用户数据文件 (SavedVariables)
+*.lua.bak
+*.lua.old
+*.lua.save
+
+# WoW 插件缓存和临时文件
+*.tmp
+*.cache
+*.log
+*.lua~
+
+# WoW 插件错误日志
+BugSack.lua
+BugGrabber.lua
+
+# WoW 插件配置文件 (用户自定义)
+ChatWarden.lua  # 插件自动生成的配置文件
+ChatWardenDB.lua  # SavedVariables 数据文件
+
+# ============================================
+# 操作系统特定文件
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# ============================================
+# 编辑器/IDE 文件
+# ============================================
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# Emacs
+*~
+\#*
+.\#*
+.DS_Store?
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+.htaccess
+
+# Notepad++
+*.session.xml
+
+# ============================================
+# 通用开发文件
+# ============================================
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# 备份文件
+*.bak
+*.backup
+*.old
+*.save
+
+# 日志文件
+*.log
+logs/
+log/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Lua 开发特定文件
+# ============================================
+
+# Lua 字节码文件
+*.luac
+
+# LuaRocks 包管理
+.luarocks/
+luarocks.lock
+
+# ============================================
+# 版本控制系统
+# ============================================
+
+# Git
+.gitattributes
+.gitmodules
+
+# ============================================
+# 其他
+# ============================================
+
+# 压缩文件 (通常不提交)
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tgz
+
+# 文档生成
+docs/_build/
+docs/_site/
+
+# 测试覆盖率
+coverage/
+*.cover
+*.lcov
