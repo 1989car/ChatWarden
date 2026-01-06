@@ -29,17 +29,21 @@ ChatWarden/
 ## 开发环境设置
 
 ### 1. WoW插件开发环境
+
 - **WoW客户端**: 需要安装World of Warcraft客户端
 - **插件目录**: `World of Warcraft/classi_titan/Interface/AddOns/`
 - **开发流程**: 将项目文件夹复制到插件目录进行测试
 
 ### 2. Lua开发工具
+
 - **编辑器推荐**: VS Code + Lua扩展
 - **调试工具**: 使用WoW内置的`/script`命令或BugSack插件
 - **代码检查**: 暂无配置LuaLint等工具
 
 ### 3. 项目状态
+
 当前项目处于**早期开发阶段**，只有基础框架文件：
+
 - ✅ 已包含完整的Ace3框架
 - ✅ 已配置插件元数据 (.toc文件)
 - ❌ 缺少主插件逻辑代码 (ChatWarden.lua)
@@ -48,13 +52,16 @@ ChatWarden/
 ## 构建和测试
 
 ### 构建流程
+
 WoW插件无需传统构建过程，直接复制文件即可：
+
 ```bash
 # 将插件复制到WoW插件目录
 cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
 ```
 
 ### 测试方法
+
 1. **启动WoW客户端**
 2. **登录游戏**
 3. **检查插件加载**:
@@ -65,6 +72,7 @@ cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
    - 检查保存变量是否正确存储
 
 ### 调试技巧
+
 - 使用`/script print("调试信息")`输出调试信息
 - 查看`ChatWardenDB.lua`文件检查保存变量
 - 使用BugSack插件捕获错误
@@ -72,6 +80,7 @@ cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
 ## Ace3框架使用指南
 
 ### 核心库
+
 - **AceAddon-3.0**: 插件基础框架
 - **AceEvent-3.0**: 事件处理系统
 - **AceDB-3.0**: 数据存储管理
@@ -80,6 +89,7 @@ cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
 - **AceGUI-3.0**: 图形用户界面组件
 
 ### 基本插件结构
+
 ```lua
 -- ChatWarden.lua 示例结构
 local ChatWarden = LibStub("AceAddon-3.0"):NewAddon("ChatWarden", "AceConsole-3.0", "AceEvent-3.0")
@@ -101,26 +111,33 @@ end
 ## 开发工作流程
 
 ### 1. 创建主插件文件
+
 需要创建 `ChatWarden.lua` 文件，包含：
+
 - 插件初始化逻辑
 - 事件处理函数
 - 配置管理
 - 聊天监控逻辑
 
 ### 2. 添加配置文件
+
 建议创建 `ChatWarden_Config.lua` 用于：
+
 - 默认配置设置
 - 用户选项管理
 - 本地化字符串
 
 ### 3. 实现核心功能
+
 根据插件描述，需要实现：
+
 - 聊天消息监控
 - 垃圾信息检测算法
 - 用户屏蔽功能
 - 配置界面
 
 ### 4. 测试和迭代
+
 - 在游戏中测试每个功能
 - 收集用户反馈
 - 优化检测算法
@@ -136,13 +153,16 @@ end
 ## Git工作流程
 
 ### 忽略的文件
+
 根据 `.gitignore` 配置，以下文件不应提交：
+
 - 用户数据文件 (`ChatWardenDB.lua`)
 - 编辑器临时文件
 - 操作系统特定文件
 - 备份文件
 
 ### 提交规范
+
 - 使用中文或英文提交信息
 - 描述功能变更而非文件列表
 - 保持提交的原子性
@@ -158,9 +178,9 @@ end
 ## 资源链接
 
 - **Ace3文档**: [项目内的Libs/README.md](Libs/README.md)
-- **WoW API文档**: https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
-- **Lua 5.1参考**: https://www.lua.org/manual/5.1/
-- **WoW界面开发社区**: https://www.wowinterface.com/
+- **WoW API文档**: <https://wowpedia.fandom.com/wiki/World_of_Warcraft_API>
+- **Lua 5.1参考**: <https://www.lua.org/manual/5.1/>
+- **WoW界面开发社区**: <https://www.wowinterface.com/>
 
 ## 下一步开发建议
 
