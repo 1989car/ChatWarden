@@ -31,14 +31,22 @@ ChatWarden/
 ### 1. WoW插件开发环境
 
 - **WoW客户端**: 需要安装World of Warcraft客户端
-- **插件目录**: `World of Warcraft/classi_titan/Interface/AddOns/`
-- **开发流程**: 将项目文件夹复制到插件目录进行测试
+- **插件目录**:
+  - **Windows**: `C:\Program Files (x86)\World of Warcraft\classi_titan\Interface\AddOns\`
+  - **Linux/macOS**: `~/Games/World of Warcraft/classi_titan/Interface/AddOns/`
+- **开发流程**: 推荐使用硬链接方式（见下方构建流程），这样可以在开发目录修改代码时自动同步到游戏插件目录
 
 ### 2. Lua开发工具
 
-- **编辑器推荐**: VS Code + Lua扩展
-- **调试工具**: 使用WoW内置的`/script`命令或BugSack插件
-- **代码检查**: 暂无配置LuaLint等工具
+- **编辑器推荐**:
+  - **VS Code** + Lua扩展（推荐）
+  - **Notepad++** + Lua插件（Windows环境）
+  - **Sublime Text** + Lua插件
+- **调试工具**:
+  - 使用WoW内置的`/script`命令输出调试信息
+  - **BugSack**插件捕获错误
+  - **!BugGrabber**插件收集错误信息
+- **代码检查**: 暂无配置LuaLint等工具，建议手动代码审查
 
 ### 3. 项目状态
 
@@ -53,11 +61,30 @@ ChatWarden/
 
 ### 构建流程
 
-WoW插件无需传统构建过程，直接复制文件即可：
+WoW插件无需传统构建过程，推荐使用**硬链接**方式，这样可以在开发目录修改代码时自动同步到游戏插件目录：
+
+#### Linux/macOS 环境
 
 ```bash
-# 将插件复制到WoW插件目录
-cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
+# 创建硬链接到WoW插件目录
+ln -s "$(pwd)" ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/ChatWarden
+```
+
+#### Windows 环境 (Windows 11)
+
+```powershell
+# 使用mklink创建目录连接（需要管理员权限）
+mklink /J "C:\Program Files (x86)\World of Warcraft\classi_titan\Interface\AddOns\ChatWarden" "C:\path\to\your\ChatWarden\project"
+
+# 或者使用符号链接（不需要管理员权限）
+mklink /D "C:\Program Files (x86)\World of Warcraft\classi_titan\Interface\AddOns\ChatWarden" "C:\path\to\your\ChatWarden\project"
+```
+
+#### 传统复制方式（不推荐）
+
+```bash
+# 将插件复制到WoW插件目录（每次修改都需要重新复制）
+cp -r ChatWarden/ ~/Games/World\ of\ Warcraft\classi_titan/Interface/AddOns/
 ```
 
 ### 测试方法
@@ -174,6 +201,12 @@ end
 3. **内存管理**: 注意内存泄漏，及时清理不需要的数据
 4. **兼容性**: 确保与常见插件的兼容性
 5. **本地化**: 支持多语言，使用AceLocale库
+6. **Windows环境**:
+   - 使用`mklink`创建链接时需要**管理员权限**
+   - 路径中的空格需要使用引号或转义
+   - 建议在PowerShell中执行链接创建命令
+7. **文件编码**: 确保Lua文件使用UTF-8编码，避免中文乱码
+8. **路径分隔符**: Windows使用反斜杠`\`，Linux/macOS使用正斜杠`/`
 
 ## 资源链接
 
