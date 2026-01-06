@@ -30,7 +30,7 @@ ChatWarden/
 
 ### 1. WoW插件开发环境
 - **WoW客户端**: 需要安装World of Warcraft客户端
-- **插件目录**: `World of Warcraft/_retail_/Interface/AddOns/`
+- **插件目录**: `World of Warcraft/classi_titan/Interface/AddOns/`
 - **开发流程**: 将项目文件夹复制到插件目录进行测试
 
 ### 2. Lua开发工具
@@ -51,7 +51,7 @@ ChatWarden/
 WoW插件无需传统构建过程，直接复制文件即可：
 ```bash
 # 将插件复制到WoW插件目录
-cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/_retail_/Interface/AddOns/
+cp -r ChatWarden/ ~/Games/World\ of\ Warcraft/classi_titan/Interface/AddOns/
 ```
 
 ### 测试方法
